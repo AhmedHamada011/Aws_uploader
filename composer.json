@@ -1,0 +1,10 @@
+{
+  "require": {
+    "aws/aws-sdk-php":"^3.261.9"
+  },
+  "autoload": {
+    "classmap": ["classes"],
+    "files": ["config.php"]
+
+  }
+}
