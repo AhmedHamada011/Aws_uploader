@@ -10,9 +10,9 @@ if(isset($_FILES["image"])){
   $new_file_name = uniqid() . "." . $file_extention;
 
 
-  $s3 = new AwsUploader(AWS_KEY,AWS_KEY_SECRET,AWS_REGION);
+  $s3 = new AwsUploader();
 
-  $s3->upload(AWS_BUCKET_NAME,$new_file_name ,$temp_file_location);
+  $s3->upload($new_file_name ,$temp_file_location);
 
 }
 

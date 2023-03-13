@@ -7,21 +7,23 @@ class AwsUploader{
   private $key;
   private $secret;
   private $region;
+  private $bucket_name;
   private $s3;
 
-  public function __construct($key,$secret,$region)
+  public function __construct()
   {
-    $this->key = $key;
-    $this->secret = $secret;
-    $this->region = $region;
+    $this->key = AWS_KEY;
+    $this->secret = AWS_KEY_SECRET;
+    $this->region = AWS_REGION;
+    $this->bucket_name = AWS_BUCKET_NAME;
 
     $this->initialize_s3_client();
   }
 
-  public function upload($bucket_name,$file_name,$source_file){
+  public function upload($file_name,$source_file){
     
     $result = $this->s3->putObject([
-			'Bucket' => $bucket_name,
+			'Bucket' => $this->bucket_name,
 			'Key'    => $file_name,
 			'SourceFile' => $source_file			
 		]);
