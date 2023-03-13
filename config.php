@@ -1,6 +1,7 @@
 <?php
 
-define("AWS_KEY","ENTER_KEY_HERE");
-define("AWS_KEY_SECRET","ENTER_KEY_SECRET_HERE");
-define("AWS_REGION","ENTER_REGION_HERE");
-define("AWS_BUCKET_NAME","my_bucket");
+define("AWS_KEY","AKIAIOSFODNN7EXAMPLE");
+define("AWS_KEY_SECRET","wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY");
+define("AWS_REGION","my-region");
+define("AWS_BUCKET_NAME","ahmed");
+define("AWS_END_POINT","http://localhost:9444/");

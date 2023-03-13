@@ -16,7 +16,7 @@ class AwsUploader{
     $result = $this->s3->putObject([
 			'Bucket' => AWS_BUCKET_NAME,
 			'Key'    => $file_name,
-			'SourceFile' => $source_file			
+			'SourceFile' => $source_file,
 		]);
 
     return $result;
@@ -24,11 +24,12 @@ class AwsUploader{
 
 
   private function initialize_s3_client(){
-    $this->s3 = S3Client::factory(array(
+    $this->s3 = new S3Client(array(
       'credentials' => array(
           'key' => AWS_KEY,
           'secret' => AWS_KEY_SECRET,
       ), 'region' => AWS_REGION,
+      'endpoint' => AWS_END_POINT,
       'version' => 'latest'
   ));
 
