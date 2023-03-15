@@ -16,7 +16,7 @@ if(isset($_FILES["image"])){
 
 }
 
-require_once("views/uploader.php");
+require_once("views/upload.view.php");
 
 
 
