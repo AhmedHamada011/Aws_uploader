@@ -12,11 +12,12 @@ if(isset($_FILES["image"])){
 
   $s3 = new AwsUploader();
 
-  $s3->upload($new_file_name ,$temp_file_location);
-
+  try {
+    $s3->upload($new_file_name, $temp_file_location);
+  }catch (Exception $e) {
+    echo "There was an Error at Uploading the file";
+    die();
+  }
 }
 
 require_once("views/upload.view.php");
-
-
-
